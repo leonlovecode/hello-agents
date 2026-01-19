@@ -1,0 +1,51 @@
+name: Upstream Sync
+
+permissions:
+  contents: write # 允许写入代码
+
+on:
+  schedule:
+    - cron: "0 0 * * 5" # 每周五 UTC 0点（北京时间早8点）自动运行
+  workflow_dispatch: # 允许手动点按钮触发
+
+jobs:
+  sync_latest_from_upstream:
+    name: Sync latest commits from upstream repo
+    runs-on: ubuntu-latest
+    if: ${{ github.event.repository.fork }} # 只有是 Fork 仓库才运行，防止误伤上游
+
+    steps:
+      # 1. 标准 Checkout
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+
+      # 2. 执行同步 (使用目前最流行的 aormsby 插件)
+      - name: Sync upstream changes
+        id: sync
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+        with:
+          # 你的目标分支（通常是 main 或 master）
+          target_sync_branch: main
+          # 必须使用有 workflow 权限的 PAT，不能用 GITHUB_TOKEN
+          target_repo_token: ${{ secrets.Git_Repo_Sync_Action }}
+
+          # 上游仓库地址 (格式：用户名/仓库名)
+          # 目标上游仓库
+          upstream_sync_repo: datawhalechina/Hello-Agents
+          # 上游默认分支为 main
+          upstream_sync_branch: main
+
+          # 如果是公开仓库，下面这一行不需要，如果是私有上游才需要
+          # upstream_repo_access_token: ${{ secrets.UPSTREAM_ACCESS_TOKEN }}
+
+          # 测试模式：设为 false 才会真正执行 push
+          test_mode: false
+
+      # 3. (可选) 如果有更新，打印日志
+      - name: New commits found
+        if: steps.sync.outputs.has_new_commits == 'true'
+        run: echo "New commits were found to sync."
+
+      - name: No new commits
+        if: steps.sync.outputs.has_new_commits == 'false'
+        run: echo "There were no new commits."
