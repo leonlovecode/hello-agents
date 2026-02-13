@@ -27,7 +27,7 @@
 
 **[🌐 Click here to start online reading](https://datawhalechina.github.io/hello-agents/)**
 
-**[📖 Cookbook (Beta)](https://book.heterocat.com.cn/)**
+**[📖 Cookbook](https://book.heterocat.com.cn/)**
 
 ### ✨ What Will You Gain?
 
@@ -125,8 +125,8 @@ We are an open-source community and welcome any form of contribution!
 
 ### Core Contributors
 - [Chen Sizhou - Project Leader](https://github.com/jjyaoao) (Datawhale member, full text writing and proofreading)
-- [Sun Tao - Project Leader](https://github.com/fengju0213) (Datawhale member, Chapter 9 content and proofreading)
-- [Jiang Shufan - Project Leader](https://github.com/Tsumugii24) (Datawhale member, chapter exercise design and proofreading)
+- [Sun Tao - Co-sponsor](https://github.com/fengju0213) (Datawhale member, CAMEL-AI, Chapter 9 content and proofreading)
+- [Jiang Shufan - Co-sponsor](https://github.com/Tsumugii24) (Datawhale member, chapter exercise design and proofreading)
 - [Huang Peilin - Datawhale Prospective Member](https://github.com/HeteroCat) (Agent Development Engineer, Chapter 5 content contributor)
 - [Zeng Xinmin - Agent Engineer](https://github.com/fancyboi999) (Niuke Technology, Chapter 14 case development)
 - [Zhu Xinzhong - Advisory Expert](https://xinzhongzhu.github.io/) (Chief Scientist of Datawhale, Professor at Hangzhou Institute of Artificial Intelligence, Zhejiang Normal University)
@@ -150,11 +150,18 @@ We are an open-source community and welcome any form of contribution!
 ## Star History
 
 <div align='center'>
-    <img src="./images/star-history-2026113.png" alt="Datawhale" width="90%">
+    <img src="./images/star-history-2026210.png" alt="Datawhale" width="90%">
 </div>
 
 <div align="center">
   <p>⭐ If this project helps you, please give us a Star!</p>
+</div>
+
+## Reader Community Group
+
+<div align='center'>
+	<img src="https://raw.githubusercontent.com/datawhalechina/Hello-Agents/main/读者群二维码.png" alt="阅读群额码" width="30%">
+	<p>Scan the QR code to join the reader community group and discuss with more learners</p>
 </div>
 
 ## About Datawhale
