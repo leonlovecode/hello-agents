@@ -17,12 +17,12 @@ jobs:
     steps:
       # 1. 标准 Checkout
       - name: Checkout target repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # 2. 执行同步 (使用 aormsby 插件)
       - name: Sync upstream changes
         id: sync
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.3
         with:
           # 目标分支（通常是 main 或 master）
           target_sync_branch: main
